@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Ali | Cybersecurity Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d3748;
+            --accent-color: #3182ce;
+            --light-color: #e2e8f0;
+            --dark-color: #2d3748;
+            --text-color: #2d3748;
+            --background-color: #f7fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            color: var(--primary-color);
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin: 0.3rem;
+        }
+        
+        .btn:hover {
+            background-color: #2c5282;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .about {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+        
+        .skill-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .certifications {
+            background-color: var(--light-color);
+        }
+        
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .cert-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cert-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience {
+            background-color: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background-color: var(--accent-color);
+        }
+        
+        .timeline-item {
+            padding: 1rem 2rem;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+        
+        .timeline-content {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .projects {
+            background-color: var(--light-color);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+        
+        .project-info p {
+            margin-bottom: 1rem;
+        }
+        
+        .languages {
+            background-color: white;
+        }
+        
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .lang-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .lang-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .contact-info {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info p {
+            margin: 0.5rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+        }
+        
+        .social-links {
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-right: 0;
+                padding-left: 70px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero">
+                <div class="profile-img">MA</div>
+                <h1>Mohammad Ali</h1>
+                <p>Cybersecurity Professional | Python Developer | Network Analyst</p>
+                <div>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                    <a href="#projects" class="btn btn-outline">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about">
+                <p>I am a recent graduate and aspiring cybersecurity analyst with hands-on experience in Linux, Python, and network analysis tools such as Wireshark and Tcpdump. I have completed the Google Cybersecurity Professional Certificate and built projects in threat detection, log analysis, and automation.</p>
+                <p>Fluent in four languages (Arabic, English, Urdu, and Hindi), I bring strong communication skills along with technical expertise to cybersecurity roles.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>Python Programming</li>
+                        <li>Linux Administration</li>
+                        <li>Wireshark & Tcpdump</li>
+                        <li>SQL Databases</li>
+                        <li>SIEM Tools</li>
+                        <li>Network Security</li>
+                        <li>Threat Detection</li>
+                        <li>Incident Response</li>
+                        <li>File I/O Operations</li>
+                        <li>Bash Scripting</li>
+                        <li>Data Entry & Management</li>
+                        <li>Microsoft Office</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-shield-alt"></i> Cybersecurity Skills</h3>
+                    <ul class="skill-list">
+                        <li>Cybersecurity Fundamentals</li>
+                        <li>Network Security</li>
+                        <li>Threat Detection</li>
+                        <li>Incident Response</li>
+                        <li>Security Risk Management</li>
+                        <li>Assets & Vulnerabilities</li>
+                        <li>Security Automation</li>
+                        <li>Access Control Policies</li>
+                        <li>Encryption Techniques</li>
+                        <li>Firewall Configuration</li>
+                        <li>Intrusion Detection Systems</li>
+                        <li>Security Frameworks (NIST)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-user-tie"></i> Professional Skills</h3>
+                    <ul class="skill-list">
+                        <li>Inventory Management</li>
+                        <li>Customer Service</li>
+                        <li>Sales & Communication</li>
+                        <li>Time Management</li>
+                        <li>Teamwork</li>
+                        <li>Problem-Solving</li>
+                        <li>Data Entry</li>
+                        <li>Multilingual Communication</li>
+                        <li>Risk Assessment</li>
+                        <li>Compliance</li>
+                        <li>Documentation</li>
+                        <li>Project Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <h3>Google Cybersecurity Professional Certificate</h3>
+                    <p>Coursera | Aug 2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>Automate Cybersecurity Tasks with Python</h3>
+                    <p>Google | Aug 2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>Assets, Threats, and Vulnerabilities</h3>
+                    <p>Google | Jul 2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>Connect and Protect: Networks and Network Security</h3>
+                    <p>Google | Jul 2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>Foundations of Cybersecurity</h3>
+                    <p>Google | Jul 2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>Play It Safe: Manage Security Risks</h3>
+                    <p>Google | Jul 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Service Staff (Walter)</h3>
+                        <p>Do&Co (Formula 1 Event, Jeddah) | Mar 2024</p>
+                        <p>Provided high-quality customer service in a high-pressure, fast-paced international event environment. Demonstrated strong teamwork and communication skills.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Delivery Driver</h3>
+                        <p>Food Delivery Service | 2022 (1 year)</p>
+                        <p>Managed timely and accurate delivery of orders, demonstrating reliability and time management.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Data Entry & Inventory Assistant</h3>
+                        <p>AI Muzammil Exhibition | 2022 (1 year)</p>
+                        <p>Managed accurate data entry for inventory and customer orders. Maintained and updated stock records, ensuring real-time accuracy.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Various School Event Roles</h3>
+                        <p>Food Stall Attendant, Counter Staff, Book Stall Manager | 2019 - 2023</p>
+                        <p>Developed customer service, sales, and cash handling skills through managing various stalls and events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Cybersecurity Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>File Update Algorithm in Python</h3>
+                        <p>Developed a Python algorithm to manage IP address allow lists by removing unauthorized addresses, enhancing security through automated access control.</p>
+                        <p><strong>Technologies:</strong> Python, File I/O Operations, Data Processing</p>
+                        <a href="#" class="btn">View Project Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>SQL Query Filtering for Security</h3>
+                        <p>Created and implemented SQL queries with filters to investigate security incidents, monitor login attempts, and manage employee access rights.</p>
+                        <p><strong>Technologies:</strong> SQL, MariaDB, Database Security</p>
+                        <a href="#" class="btn">View Project Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Linux File Permissions Management</h3>
+                        <p>Applied Linux commands to modify file and directory permissions according to the principle of least privilege, reducing potential security vulnerabilities.</p>
+                        <p><strong>Technologies:</strong> Linux, Bash, File Permissions</p>
+                        <a href="#" class="btn">View Project Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Cybersecurity Control Analysis</h3>
+                        <p>Researched and documented various cybersecurity controls across administrative, technical, and physical categories to understand organizational security postures.</p>
+                        <p><strong>Technologies:</strong> Security Frameworks, Risk Assessment</p>
+                        <a href="#" class="btn">View Project Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Incident Response & Analysis</h3>
+                        <p>Documented and analyzed security incidents using the NIST framework, including detection, analysis, containment, eradication, and recovery phases.</p>
+                        <p><strong>Technologies:</strong> Incident Response, Wireshark, tcpdump, VirusTotal</p>
+                        <a href="#" class="btn">View Project Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Security Audit & Risk Assessment</h3>
+                        <p>Conducted comprehensive security audits identifying vulnerabilities, assessing risks, and recommending controls to improve organizational security posture.</p>
+                        <p><strong>Technologies:</strong> Risk Assessment, NIST CSF, Compliance</p>
+                        <a href="#" class="btn">View Project Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="languages">
+        <div class="container">
+            <h2>Languages</h2>
+            <div class="lang-grid">
+                <div class="lang-item">
+                    <h3>Arabic</h3>
+                    <p>Native</p>
+                </div>
+                
+                <div class="lang-item">
+                    <h3>English</h3>
+                    <p>Fluent</p>
+                </div>
+                
+                <div class="lang-item">
+                    <h3>Urdu</h3>
+                    <p>Fluent</p>
+                </div>
+                
+                <div class="lang-item">
+                    <h3>Hindi</h3>
+                    <p>Fluent</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Jeddah, Saudi Arabia</p>
+                <p><i class="fas fa-phone"></i> +966537668715</p>
+                <p><i class="fas fa-envelope"></i> mohammedalifarani@gmail.com</p>
+                <p><i class="fab fa-linkedin"></i> linkedin.com/in/mohammed-a-696221373</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <p>&copy; 2025 Mohammad Ali. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
